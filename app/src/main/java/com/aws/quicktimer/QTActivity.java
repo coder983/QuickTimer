@@ -34,7 +34,7 @@ public class QTActivity extends Activity{
 	private static final String QLABEL_KEY = "ql";
 	private static final String TLABEL_KEY = "tl";
 	private static final String CT_BUTTON_ENABLED_KEY = "cten";
-    private static final String START_STOP = "ssb"
+    private static final String START_STOP = "ssb";
 
     long totalMinutes = 0;
 	long start = 0;
@@ -160,7 +160,7 @@ public class QTActivity extends Activity{
 		setTotalMinutes(savedInstanceState.getLong(TOTAL_MINUTES_KEY));
 		setStart(savedInstanceState.getLong(START_MINUTES_KEY));
 		getCurrentTimeButton().setEnabled((Boolean) savedInstanceState.get(CT_BUTTON_ENABLED_KEY));
-        getStartStopButton().setText(savedInstanceState.get(START_STOP));
+        getStartStopButton().setText((String)savedInstanceState.get(START_STOP));
 		
 		super.onRestoreInstanceState(savedInstanceState);
 	}
@@ -173,7 +173,7 @@ public class QTActivity extends Activity{
 		outState.putLong(TOTAL_MINUTES_KEY, getTotalMinutes());
 		outState.putBoolean(CT_BUTTON_ENABLED_KEY, getCurrentTimeButton().isEnabled());
 		outState.putString(TLABEL_KEY, (String) gettLabel().getText());
-        outState.putString(START_STOP, getStartStopButton().getText());
+        outState.putString(START_STOP, (String) getStartStopButton().getText());
 		
 		super.onSaveInstanceState(outState);
 	}
